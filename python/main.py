@@ -25,12 +25,10 @@ def opportunity():
     try:
         title = request.get_json()["title"]
         criteria = request.get_json()["criteria"]
-        criteria_list = criteria.split(",")
       
         criteria_file = os.path.join(app.config["UPLOAD_FOLDER"], CRITERIA_FILE)
         with open(criteria_file, 'w') as file:
-            for line in criteria_list:
-                file.write(line + "\n")
+            file.write(criteria)
         
         result, error = s3.create_bucket(title, CRITERIA_FILE, app.config["UPLOAD_FOLDER"]) 
         if not error:
@@ -38,7 +36,7 @@ def opportunity():
             return result    
         else:
             return error     
-    
+   
     except Exception as e:
         return str(e)
             

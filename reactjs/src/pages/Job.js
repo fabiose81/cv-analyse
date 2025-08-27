@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import ModalComponent from '../components/ModalComponent'
@@ -34,7 +35,7 @@ const Job = () => {
     <>
       <Alert variant={message.variant} hidden={message.label === ''}>{message.label}</Alert>
       <Form.Group className="mb-3">
-        <Form.Control  placeholder="Enter job title. Ex: stingray-opportunity-dev-java"
+        <Form.Control placeholder="Enter job title. Ex: stingray-opportunity-dev-java"
           value={title} onChange={(e) => {
             setTitle(e.target.value)
             const emptyField = e.target.value.trim().length > 0;
@@ -44,19 +45,23 @@ const Job = () => {
           maxLength={100}
           required />
 
-          <br/>
+        <br />
 
-          <Form.Control placeholder="Enter job criteria. Ex: java, spring"
-          value={criteria} onChange={(e) => {
-            setCriteria(e.target.value)
-            const emptyField = e.target.value.trim().length > 0;
-            setButtonDisabled(!emptyField);
-          }
-          }
-          maxLength={150}
-          required />
+        <FloatingLabel controlId="floatingTextarea2" label="Enter job criteria.">
+          <Form.Control
+            as="textarea"
+            style={{ height: '100px' }}
+            value={criteria} onChange={(e) => {
+              setCriteria(e.target.value)
+              const emptyField = e.target.value.trim().length > 0;
+              setButtonDisabled(!emptyField);
+            }
+            }
+            maxLength={150}
+            required />
+        </FloatingLabel>
 
-        <br/>
+        <br />
 
         <Button className="button" variant="primary" onClick={createJob} disabled={buttonDisabled}>{Constants.SAVE}</Button>
       </Form.Group>
