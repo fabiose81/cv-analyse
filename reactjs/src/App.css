@@ -1,0 +1,12 @@
+.main-content {
+    padding: 1rem;
+    margin: 5rem auto;
+    width: 50rem;
+    max-width: 90%;
+}
+
+.button {  
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+}
