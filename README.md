@@ -11,7 +11,7 @@
     LAMBDA_FUNCTION_NAME = {your lambda function name} 
     LAMBDA_FUNCTION_ARN = {your lambda function arn} 
 
-### Lambda code for AWS Serveless(Python) :: Analyse CV
+### Lambda code for AWS Serverless(Python) :: Analyse CV
 
     import os
     import io
