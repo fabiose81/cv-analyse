@@ -16,12 +16,37 @@ export function create(title, criteria) {
     return request('/job', requestOptions);
 }
 
-export function list() {
+export function listJobs() {
     const requestOptions = {
         method: 'GET'
     };
 
     return request('/jobs', requestOptions);
+}
+
+export function listCVs(job) {
+    const requestOptions = {
+        method: 'GET'
+    };
+
+    const params = new URLSearchParams();
+    params.append('job', job);
+    const url = `/cvs?${params.toString()}`;
+
+    return request(url, requestOptions);
+}
+
+export function getCV(bucket, key) {
+    const requestOptions = {
+        method: 'GET'
+    };
+
+    const params = new URLSearchParams();
+    params.append('bucket', bucket);
+    params.append('key', key);
+    const url = `/cv?${params.toString()}`;
+
+    return request(url, requestOptions);
 }
 
 export function upload(file, job) {

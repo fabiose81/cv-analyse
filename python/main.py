@@ -4,9 +4,10 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), './aws/'))
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS 
 import s3
+import dynamo
 
 app = Flask(__name__)
 
@@ -41,9 +42,19 @@ def opportunity():
         return str(e)
             
 @app.route("/jobs", methods=['GET'])
-def list():
+def jobs():
    return s3.list()
 
+@app.route("/cvs", methods=['GET'])
+def cvs():
+   return dynamo.list(job=request.args.get('job'))
+
+@app.route("/cv", methods=['GET'])
+def cv():
+   bucket_name = request.args.get('bucket') 
+   object_key = request.args.get('key') 
+   return s3.get_object_from_bucket(bucket_name, object_key)
+      
 @app.route("/upload", methods=["POST"])
 def upload():
     if 'file' not in request.files:

@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
-import ModalComponent from '../components/ModalComponent'
-import { setMessageState } from '../utils/UIUtils'
-import { Constants } from '../utils/Constants';
-import { list, upload } from '../services/Request'
+import ModalComponent from '../../components/ModalComponent'
+import { setMessageState } from '../../utils/UIUtils'
+import { Constants } from '../../utils/Constants';
+import { listJobs, upload } from '../../services/Request'
 
 const CV = () => {
 
@@ -13,14 +13,14 @@ const CV = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [selectedJob, setSelectedJob] = useState(null);
     const [showModal, setShowModal] = useState(false);
-    const [actionEvent, setActionEvent] = useState('');
+    const [labelModal, setLabelModal] = useState('');
     const [message, setMessage] = useState({
         label: '',
         variant: ''
     })
 
     const uploadFile = () => {
-        setActionEvent(Constants.MODAL_LABEL_UPLOAD)
+        setLabelModal(Constants.MODAL_LABEL_CV_UPLOAD)
         setShowModal(true);
         upload(selectedFile, selectedJob)
             .then((response) => {
@@ -33,9 +33,9 @@ const CV = () => {
     };
 
     const loadJobs = () => {
-        setActionEvent(Constants.MODAL_LABEL_LIST)
+        setLabelModal(Constants.MODAL_LABEL_JOB_LIST)
         setShowModal(true);
-        list()
+        listJobs()
             .then(result => {
                 setJobs(JSON.parse(result));
             }).catch((error) => {
@@ -87,7 +87,7 @@ const CV = () => {
 
                 <Button className="button" variant="primary" disabled={!(selectedFile && selectedJob)} onClick={uploadFile}>{Constants.UPLOAD}</Button>
             </Form.Group>
-            <ModalComponent showModal={showModal} label={actionEvent} />
+            <ModalComponent showModal={showModal} label={labelModal} />
         </>
     )
 }

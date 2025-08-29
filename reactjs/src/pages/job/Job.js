@@ -3,10 +3,10 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
-import ModalComponent from '../components/ModalComponent'
-import { Constants } from '../utils/Constants';
-import { setMessageState } from '../utils/UIUtils'
-import { create } from '../services/Request'
+import ModalComponent from '../../components/ModalComponent'
+import { Constants } from '../../utils/Constants';
+import { setMessageState } from '../../utils/UIUtils'
+import { create } from '../../services/Request'
 
 const Job = () => {
 
@@ -65,7 +65,7 @@ const Job = () => {
 
         <Button className="button" variant="primary" onClick={createJob} disabled={buttonDisabled}>{Constants.SAVE}</Button>
       </Form.Group>
-      <ModalComponent showModal={showModal} label={Constants.MODAL_LABEL_CREATE} />
+      <ModalComponent showModal={showModal} label={Constants.MODAL_LABEL_JOB_CREATE} />
     </>
   )
 }

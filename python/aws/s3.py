@@ -1,4 +1,5 @@
 import os
+import io
 import boto3
 import json
 
@@ -45,7 +46,20 @@ def list():
         s3_client = get_s3_client()
         return s3_client.list_buckets()["Buckets"]
     except Exception as e:
-        print(e)
+        return None, str(e)
+    
+def get_object_from_bucket(bucket_name, object_key):
+    try:
+        s3_client = get_s3_client()
+        
+        url = s3_client.generate_presigned_url(
+            'get_object',
+            Params={'Bucket': bucket_name, 'Key': object_key},
+            ExpiresIn=3600
+        )         
+        
+        return url, None
+    except Exception as e:
         return None, str(e)
          
 def get_s3_client():
