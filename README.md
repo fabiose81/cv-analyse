@@ -1,5 +1,3 @@
-https://github.com/user-attachments/assets/868e40f5-734d-435c-9928-eac802c1edb4
-
 ![alt text](https://github.com/fabiose81/cv-analyse/blob/master/cv-analyse.jpg?raw=true)
 
 ### For Python and AWS/S3/Lambda
