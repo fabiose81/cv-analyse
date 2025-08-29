@@ -1,4 +1,4 @@
-https://github.com/user-attachments/assets/663295f2-53f5-40db-83ed-967dbb91d00d
+https://github.com/user-attachments/assets/f5813f72-a8de-45d3-8618-17654accf5b6
 
 ![alt text](https://github.com/fabiose81/cv-analyse/blob/master/cv-analyse.jpg?raw=true)
 
