@@ -4,6 +4,8 @@ https://github.com/user-attachments/assets/8de5a151-7b3b-4435-87a9-d5f29ddcfe24
 
 https://github.com/user-attachments/assets/da5965cd-b776-4b5a-bcc9-fccc8226eb74
 
+https://github.com/user-attachments/assets/0b48ce99-43d3-45a7-acb6-0bad3e3fc150
+
 ![alt text](https://github.com/fabiose81/cv-analyse/blob/master/cv-analyse.jpg?raw=true)
 
 ### For Python and AWS/S3/Lambda
