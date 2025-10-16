@@ -1,3 +1,10 @@
+# AI-based image creation
+
+  ⚙️ : Python
+  💻 : React(JavaScript)
+  ☁️ : AWS(Lambda / S3 / DynamoDB)
+  🤖 : API OpenAI
+
 https://github.com/user-attachments/assets/f5813f72-a8de-45d3-8618-17654accf5b6
 
 https://github.com/user-attachments/assets/8de5a151-7b3b-4435-87a9-d5f29ddcfe24
