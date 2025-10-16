@@ -1,4 +1,4 @@
-# AI-based image creation
+# CV analysis tool based on criteria established using AI
 
   ⚙️ : Python
   💻 : React(JavaScript)
